@@ -41,11 +41,13 @@ export function TaskList() {
     : task
     );
     setTasks(tasksCompletion);
+    localStorage.setItem('@Todo:tasks', JSON.stringify(tasksCompletion))
   }
 
   function handleRemoveTask(id: number) {
     const removedTasks = tasks.filter(task => task.id !== id);
     setTasks(removedTasks);
+    localStorage.setItem('@Todo:tasks', JSON.stringify(removedTasks))
   }
 
   return (
